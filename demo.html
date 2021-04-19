@@ -1,3 +1,538 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<style>
+/* 
+border: 3.5px solid #2A19EC;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+body {
+  margin: 0; font-family: 'Play', sans-serif;
+}
+
+.browser_bar{
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  background: #F1F1EC;
+  border-bottom: 2px solid #D8D2BD;
+  image-rendering: pixelated;
+}
+
+.browser_bar_nav_bg{
+  position: absolute;
+  background-image: url("https://i.imgur.com/bVwAVi6.png");
+  background-repeat: no-repeat;
+  background-size: 88px 40px;
+  width: 88px;
+  height: 40px;
+  margin: 7px;
+}
+
+.browser_bar_nav_left{
+  position: absolute;
+  background-image: url("https://i.imgur.com/g0nG7on.png");
+  background-repeat: no-repeat;
+  background-size: 45px 45px;
+  width: 45px;
+  height: 45px;
+  margin: 4px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.browser_bar_nav_left:hover{
+  background-image: url("https://i.imgur.com/eQGOGMS.png");
+}
+
+.browser_bar_nav_left:active {
+  background-image: url("https://i.imgur.com/vr87pK7.png");
+}
+
+.browser_bar_nav_right{
+  position: absolute;
+  background-image: url("https://i.imgur.com/bHklheN.png");
+  background-repeat: no-repeat;
+  background-size: 34px 32px;
+  width: 34px;
+  height: 32px;
+  margin: 11px;
+  margin-left: 56px;
+  cursor: pointer;
+}
+
+.browser_bar_nav_right:hover{
+  background-image: url("https://i.imgur.com/6EBkMHj.png");
+}
+
+.browser_bar_nav_right:active{
+  background-image: url("https://i.imgur.com/l5bTkLb.png");
+}
+
+.browser_bar_home{
+  position: absolute;
+  background-image: url("https://i.imgur.com/9XheP9J.png");
+  background-repeat: no-repeat;
+  background-size: 28px 28px;
+  width: 28px;
+  height: 28px;
+  margin: 14px;
+  margin-left: 152px;
+  cursor: pointer;
+}
+
+.browser_bar_refresh{
+  position: absolute;
+  background-image: url("https://i.imgur.com/vgv2Mmy.png");
+  background-repeat: no-repeat;
+  background-size: 28px 28px;
+  width: 28px;
+  height: 28px;
+  margin: 14px;
+  margin-left: 107px;
+  cursor: pointer;
+}
+
+.browser_bar_refresh:hover{
+  background-image: url("https://i.imgur.com/rlaDwtX.png");
+}
+
+.browser_bar_refresh:active{
+  background-image: url("https://i.imgur.com/VaH8ooH.png");
+}
+
+.browser_bar_home:hover{
+  background-image: url("https://i.imgur.com/a09zB1R.png");
+}
+
+.browser_bar_home:active{
+  background-image: url("https://i.imgur.com/YKjr5WW.png");
+}
+
+.browser_bar_search_fore{
+  position: absolute;
+  background-image: url("https://i.imgur.com/gTHyfTp.png");
+  background-repeat: no-repeat;
+  background-size: 55px 33px;
+  width: 55px;
+  height: 33px;
+  margin: 12px;
+  margin-left: 192px;
+}
+
+.browser_bar_search_text{
+  position: absolute;
+  min-width: 30px;
+  width: auto;
+  height: 29px;
+  margin: 12px;
+  line-height: 28px;
+  font-size: 22px;
+  margin-left: 247px;
+  border-top: solid 2px #ACA899;
+  border-bottom: solid 2px #ACA899;
+  color: #D4D0D0;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.browser_bar_search_ass{
+  position: absolute;
+  background-image: url("https://i.imgur.com/VBNGqnj.png");
+  background-repeat: no-repeat;
+  background-size: 21px 33px;
+  width: 55px;
+  height: 33px;
+  margin: 12px;
+  margin-left: 282px;
+}
+
+.browser_bar_settings{
+  position: absolute;
+  background-image: url("https://i.imgur.com/io6ZvI6.png");
+  background-repeat: no-repeat;
+  background-size: 38px 38px;
+  width: 38px;
+  height: 38px;
+  margin: 9px;
+  right: 0;
+  cursor: pointer;
+}
+
+.browser_bar_settings:hover{
+  background-image: url("https://i.imgur.com/2G1oZCQ.png");
+}
+
+.browser_bar_settings:active{
+  background-image: url("https://i.imgur.com/YzI0DjY.png");
+}
+
+.footer_bar{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background: #F1F1EC;
+  border-top: 2px solid #B5B5B5;
+  image-rendering: pixelated;
+}
+
+.footer_bar_status{
+  position: absolute;
+  border-left: 2px solid #B5B5B5;
+  border-right: 2px solid #B5B5B5;
+  width: 35px;
+  height: 30px;
+  margin: 0px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.footer_bar_status_icon{
+  position: absolute;
+  background-image: url("https://i.imgur.com/IDusToM.png");
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+  margin: 6px;
+  right: 10px;
+  filter: grayscale(100%);
+  filter: brightness(45%);
+}
+
+.footer_bar_status_visibility{
+  position: absolute;
+  width: 7.8px;
+  height: 7.8px;
+  margin: 9px;
+  right: -3px;
+  background: #67A732;
+}
+
+.footer_bar_notifications{
+  position: absolute;
+  border-left: 2px solid #B5B5B5;
+  border-right: 2px solid #B5B5B5;
+  width: 35px;
+  height: 30px;
+  margin: 0px;
+  right: 52px;
+  cursor: pointer;
+}
+
+.footer_bar_notifications_icon{
+  position: absolute;
+  background-image: url("https://i.imgur.com/swvF6Zw.png");
+  background-repeat: no-repeat;
+  background-size: 22px 20px;
+  width: 20px;
+  height: 20px;
+  margin: 4px;
+  right: 5px;
+}
+
+.footer_bar_friends{
+  position: absolute;
+  border-left: 2px solid #B5B5B5;
+  border-right: 2px solid #B5B5B5;
+  width: 180px;
+  height: 30px;
+  margin: 0px;
+  right: 89px;
+}
+
+.footer_bar_friends_icon{
+  position: absolute;
+  background-image: url("https://i.imgur.com/8WLhWw5.png");
+  background-repeat: no-repeat;
+  background-size: 24px 20px;
+  width: 24px;
+  height: 20px;
+  margin: 4px;
+  left: 5px;
+}
+
+.footer_bar_friends_text{
+  padding: 5px;
+  margin-left: 33px;
+}
+
+.footer_bar_chat{
+  position: absolute;
+  border-left: 2px solid #B5B5B5;
+  border-right: 2px solid #B5B5B5;
+  width: 180px;
+  height: 30px;
+  margin: 0px;
+  right: 271px;
+}
+
+.footer_bar_chat_visibility{
+  position: absolute;
+  width: 7.8px;
+  height: 7.8px;
+  margin: 10px;
+  right: -3px;
+  background: #67A732;
+}
+
+.footer_bar_chat_text{
+  padding: 5px;
+  margin-left: 3px;
+}
+
+.footer_popups{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  image-rendering: pixelated;
+}
+
+.footer_popups_chat{
+  position: absolute;
+  width: 364px;
+  height: 370px;
+  background: white;
+  right: 271px;
+  bottom: 30px;
+  border: 2px black solid;
+  background: linear-gradient(180deg, #536DA6 0%, #536DA6 6.77%, #EEEEEE 6.777778%, #EEEEEE 20.83%, #FFFFFF 20.833334%, #C8C8C8 20.85%, #C8C8C8 21.45%, #FFFFFF 21.45%, #FFFFFF 83.32%, #D8DFE9 83.33%, #D8DFE9 84.00%, #FFFFFF 84.00%);
+}
+
+.footer_popups_chat_pfp{
+  position: absolute;
+  margin: 5px;
+  width: 67px;
+}
+
+.footer_popups_chat_name{
+  position: absolute;
+  margin: 1.5px;
+  margin-left: 80px;
+  font-size: 16px;
+  color: white;
+  font-weight: 200;
+}
+
+.footer_popups_chat_close{
+  position: absolute;
+  background-image: url("https://i.imgur.com/2IlJkn1.png");
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+  top: 4px;
+  right: 4px;
+  filter: opacity(30%);
+}
+
+.footer_popups_chat_jank{
+  position: absolute;
+  width: 172px;
+  height: 1px;
+  bottom: -7px;
+  right: 0px;
+  background: #B5B5B5;
+  border-right: 5px solid white;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  border-left: 4px solid white;
+}
+
+
+.footer_popups_chat_reply{
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  bottom: 0px;
+}
+
+.footer_popups_chat_reply_icon{
+  position: absolute;
+  background-image: url("https://i.imgur.com/2e8wIc9.png");
+  background-repeat: no-repeat;
+  background-size: 23px 23px;
+  width: 23px;
+  height: 23px;
+  top: 8px;
+  left: 8px;
+}
+
+.footer_popups_chat_reply_option{
+  margin-left: 38px;
+  margin-top: 2px;
+  margin-bottom: -3px;
+  top: 8px;
+  left: 8px;
+}
+
+.footer_popups_chat_messages{
+  position: absolute;
+  top: 79px;
+  width: 100%;
+  height: 230px;
+  overflow: auto;
+}
+
+.footer_popups_chat_messages_msg{
+  padding: 7px;
+  border-bottom: 2px solid #EEEEEE;
+  position: relative;
+}
+
+
+.footer_popups_chat_messages_msg_name{
+  font-weight: 600;
+  color: #3C5999;
+}
+
+.footer_popups_chat_messages_msg_content{
+  color: #7B7B7B;
+  margin-top: 1px;
+}
+
+.footer_popups_chat_messages_msg_time{
+  position: absolute;
+  color: #7B7B7B;
+  margin-top: 1px;
+  right: 12px;
+  top: 3px;
+  font-size: 12.9px;
+}
+
+.footer_popups_trifecta_popup{
+  position: absolute;
+  width: 254px;
+  height: 200px;
+  background: white;
+  right: 15px;
+  bottom: 30px;
+  border: 2px black solid;
+  background: linear-gradient(180deg, #536DA6 0%, #536DA6 12.77%, #EEEEEE 12.777778%, #FFFFFF 20.83%);
+}
+
+.footer_popups_trifecta_popup_status_jank{
+  position: absolute;
+  width: 25px;
+  height: 1px;
+  bottom: -7px;
+  right: 0px;
+  background: #B5B5B5;
+  border-right: 5px solid white;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  border-left: 5px solid white;
+}
+
+.footer_popups_trifecta_popup_notifications_jank{
+  position: absolute;
+  width: 26px;
+  height: 1px;
+  bottom: -7px;
+  right: 37px;
+  background: #B5B5B5;
+  border-right: 5px solid white;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  border-left: 4px solid white;
+}
+
+.footer_popups_trifecta_popup_friends_jank{
+  position: absolute;
+  width: 171px;
+  height: 1px;
+  bottom: -7px;
+  right: 74px;
+  background: #B5B5B5;
+  border-right: 5px solid white;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  border-left: 4px solid white;
+}
+
+.footer_popups_trifecta_popup_header{
+  position: absolute;
+  margin: 3px;
+  margin-left: 3px;
+  font-size: 16px;
+  color: white;
+  font-weight: 200;
+}
+
+.footer_popups_trifecta_popup_minimise{
+  position: absolute;
+  background: white;
+  width: 16px;
+  height: 1.7px;
+  top: 16px;
+  right: 7px;
+  filter: opacity(60%);
+}
+
+.footer_popups_trifecta_popup_sub{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50px;
+  color: #7B7B7B;
+}
+
+.footer_popups_trifecta_popup_row_items_item{
+  padding: 6px;
+  border-bottom: 2px solid #EEEEEE;
+  position: relative; 
+}
+
+.footer_popups_trifecta_popup_items{
+  position: absolute;
+  top: 26px;
+  width: 100%;
+  height: 175px;
+  overflow: auto;
+}
+
+.footer_popups_trifecta_popup_row_items_item_title{
+  margin-left: 40px;
+  color: #3C5999;
+  font-size: 13px;
+  margin-top: 0.4px;
+}
+
+.footer_popups_trifecta_popup_row_items_item_sub{
+  color: #7B7B7B;
+  margin-top: -1px;
+  margin-left: 40px;
+  width: 175px;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.footer_popups_trifecta_popup_row_items_item_image{
+  top: 7px;
+  width: 30px;
+  height: 30px;
+  background: red;
+  position: absolute;
+}
+
+.footer_popups_trifecta_popup_row_items_item_status{
+  right: 12px;
+  top: 14px;
+  width: 9px;
+  height: 9px;
+  background: red;
+  position: absolute;
+}
+
+
+
+</style>
+
 <body>
 
   <div class="browser_bar">
@@ -156,3 +691,79 @@ todo:<br> - add sounds
   </div>
 
 </body>
+<script>
+  function resizeURLBar(){
+  $(".browser_bar_search_text").css("width", ($(window).width() - 327).toString() + "px");
+    $(".browser_bar_search_ass").css("margin-left", ($(window).width() - 80).toString() + "px");
+}
+
+$( window ).resize(function() {
+	resizeURLBar();
+});
+
+resizeURLBar();
+
+$( ".footer_bar_chat" ).click(function(e) {
+  var ChatPopupID = this.id
+  console.log(ChatPopupID)
+  ChatPopupID = ChatPopupID.replace("_bar", "_pop")
+	$("#" + ChatPopupID).toggle();
+  if ($("#" + ChatPopupID).is(':visible')){
+  	$("#" + ChatPopupID.replace("_pop", "_bar")).css("background","white")
+  	$("#" + ChatPopupID.replace("_pop", "_bar")).css("border-left","2px solid black")
+  	$("#" + ChatPopupID.replace("_pop", "_bar")).css("border-right","2px solid black")
+
+  } else {
+$("#" + ChatPopupID.replace("_pop", "_bar")).css("background","#F1F1EC")
+  	$("#" + ChatPopupID.replace("_pop", "_bar")).css("border-left","2px solid #B5B5B5")
+  	$("#" + ChatPopupID.replace("_pop", "_bar")).css("border-right","2px solid #B5B5B5")
+  }
+});
+
+
+
+
+
+
+$(".fbtg").click(function(e) {
+
+	if (this.id != "noti_bar"){
+  	$("#noti_pop").hide()
+    $("#" + "noti_bar").css("background","#F1F1EC")
+    $("#" + "noti_bar").css("border-left","2px solid #B5B5B5")
+    $("#" + "noti_bar").css("border-right","2px solid #B5B5B5")
+  } 
+
+	if (this.id != "friends_bar"){
+  	$("#friends_pop").hide()
+    $("#" + "friends_bar").css("background","#F1F1EC")
+    $("#" + "friends_bar").css("border-left","2px solid #B5B5B5")
+    $("#" + "friends_bar").css("border-right","2px solid #B5B5B5")
+  } 
+
+	if (this.id != "status_bar"){
+  	$("#status_pop").hide()
+    $("#" + "status_bar").css("background","#F1F1EC")
+    $("#" + "status_bar").css("border-left","2px solid #B5B5B5")
+    $("#" + "status_bar").css("border-right","2px solid #B5B5B5")
+   } 
+
+
+  var ChatPopupID = this.id
+  console.log(ChatPopupID)
+  ChatPopupID = ChatPopupID.replace("_bar", "_pop")
+	$("#" + ChatPopupID).toggle();
+  if ($("#" + ChatPopupID).is(':visible')){
+  	$("#" + ChatPopupID.replace("_pop", "_bar")).css("background","white")
+  	$("#" + ChatPopupID.replace("_pop", "_bar")).css("border-left","2px solid black")
+  	$("#" + ChatPopupID.replace("_pop", "_bar")).css("border-right","2px solid black")
+
+  } else {
+		$("#" + ChatPopupID.replace("_pop", "_bar")).css("background","#F1F1EC")
+  	$("#" + ChatPopupID.replace("_pop", "_bar")).css("border-left","2px solid #B5B5B5")
+  	$("#" + ChatPopupID.replace("_pop", "_bar")).css("border-right","2px solid #B5B5B5")
+  }
+});
+
+
+</script>
