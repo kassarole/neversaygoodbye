@@ -46,31 +46,35 @@ function AddMessage(MessageBoxID, MessageSender, MessageContent, MessageTime, Me
 AddMessage("mat_pop", "Mat","That's great to hear an lorefjsdg fjsfjdjlsdk fnjk nfjksn dnjk fnjsdn jnfsd nfnsdmnfm,sdn fm, sdfsdjf sdjf dfjd fjfjfd fjsd fj fsdjkf sdfsdkf sdfjksd fjksd fsdjl sdjkf sdjkf dfjk sdjkfs fjsd fjksd fsdjk fsdjkf sdjkfsd jf sdfsdjk","9:22 pm")
 
 AddMessage("mat_pop", "Mat","sorry my cat ran across my keyboard","9:23 pm")
-
-window.oldSite = ''
-window.futureSite = ''
+// Please fix this bad button code
+window.oldSite = []
+window.futureSite = []
 $("div.browser_bar_nav_left").click(function(e) {
   console.log(window.oldSite)
-  if (window.oldSite === '') {
+  if (window.oldSite === []) {
     return
   } else {
-    window.futureSite = $("div.browser_bar_search_text").html()
+    window.futureSite.push($("div.browser_bar_search_text").html())
     console.log(window.futureSite)
-    $("div.browser_bar_search_text").html(window.oldSite)
-    $(".browser_bar_nav_right").css("background-image","url(https://i.imgur.com/bHklheN.png)")
+	lastItem = window.oldSite[window.oldSite.length - 1]
+	console.log(lastItem)
+    $("div.browser_bar_search_text").html(lastItem)
+    window.oldSite.pop()
   }
 })
 $(".browser_bar_nav_right").click(function(e) {
-  if (window.futureSite === '') {
+  if (window.futureSite === []) {
     return
   } else {
     console.log(window.oldSite)
-    window.oldSite = $("div.browser_bar_search_text").html()
-    $("div.browser_bar_search_text").html(window.futureSite)
+    window.oldSite.push($("div.browser_bar_search_text").html())
+	lastItem = window.futureSite[window.futureSite.length -1]
+    $("div.browser_bar_search_text").html(lastItem)
+	window.futureSite.pop()
   }
 })
 $(".link").click(function() {
-  window.oldSite = $("div.browser_bar_search_text").html()
+  window.oldSite.push($("div.browser_bar_search_text").html())
   console.log(window.oldSite)
   $("div.browser_bar_search_text").html("nsg://ilove.you/")
 })
