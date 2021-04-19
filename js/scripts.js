@@ -2,9 +2,13 @@ function resizeURLBar(){
   $(".browser_bar_search_text").css("width", ($(window).width() - 327).toString() + "px");
     $(".browser_bar_search_ass").css("margin-left", ($(window).width() - 80).toString() + "px");
 } resizeURLBar();
-
+function resizeContent(){
+  $("div.web-page").css("width", ($(window).width()).toString() + "px");
+  $("div.page_fb_header").css("width", ($(window).width()).toString() + "px");
+} resizeContent();
 $( window ).resize(function() {
 	resizeURLBar();
+	resizeContent();
 });
 
 

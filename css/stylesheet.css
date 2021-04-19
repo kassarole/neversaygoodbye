@@ -563,3 +563,24 @@ button.link {
   color:blue;
   text-decoration:underline;  
 }
+div.web-page {
+  position: fixed;
+  margin-bottom:3px;
+  margin-left:3px;
+  height: -webkit-calc(100% - 57px);
+  height:    -moz-calc(100% - 57px);
+  height:         calc(100% - 57px);
+  width: 804px;
+  overflow-x:hidden;
+  overflow-y: scroll;
+  background: white;
+}
+div.page_fb_header {
+  background: url("https://i.imgur.com/TTYJ6dm.png");
+  height: 36px;
+  width:774px;
+  left:6px;
+  top:0px;
+  background-repeat: no-repeat;
+  background-color: #3b5a99;
+}
