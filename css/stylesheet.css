@@ -563,3 +563,63 @@ button.link {
   color:blue;
   text-decoration:underline;  
 }
+
+.facenook_background{
+  position:absolute;
+  background-image: url("https://i.imgur.com/cNSAaeh.png");
+  background-repeat: no-repeat;
+  background-size: 1912px 879px;
+  top: 57px;
+  width: 1912px;
+  height: 879px;
+  right: 6px;
+}
+
+.facenook_home{
+  position:absolute;
+  background-image: url("https://i.imgur.com/6Xxth3U.png");
+  background-repeat: no-repeat;
+  background-size: 71px 20px;
+  top: 69px;
+  width: 71px;
+  height: 20px;
+  right: 276px;
+}
+  	
+.facenook_home:hover{
+  position:absolute;
+  background-image: url("https://i.imgur.com/7x85AMt.png");
+  background-repeat: no-repeat;
+  background-size: 71px 20px;
+  top: 69px;
+  width: 71px;
+  height: 20px;
+  right: 276px;
+  cursor: pointer;
+}
+
+.facenook_profile{
+  position:absolute;
+  background-image: url("https://i.imgur.com/3XOcA8O.png");
+  background-repeat: no-repeat;
+  background-size: 83px 21px;
+  top: 68px;
+  width: 83px;
+  height: 21px;
+  right: 388px;
+}
+
+.facenook_profile:hover{
+  postion:absolute;
+  background-image: url("https://i.imgur.com/HXDgajt.png");
+  background-repeat: no-repeat;
+  background-size: 83px 21px;
+  top: 68px;
+  width: 83px;
+  height: 21px;
+  right: 388px;
+  cursor: pointer;
+}
+
+
+ 

@@ -72,7 +72,7 @@ $(".link").click(function() {
 })
 $(".browser_bar_home").click(function(e) {
 	window.oldSite = $("div.browser_bar_search_text").html()
-  $("div.browser_bar_search_text").html("nsg://never.say/goodbye")
+  $("div.browser_bar_search_text").html("https://www.facenook.com/home")
 })
 
 
