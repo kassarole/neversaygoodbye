@@ -98,11 +98,15 @@ function LoadPage(Page){
 }
 
 function FollowLink(Page){
-  PagesBackwards.push(CurrentPage);
-  CurrentPage = Page;
-  LoadPage(Page);
-  PagesForwards = [];
-  CheckToDisable();
+  if (Page == CurrentPage){
+    LoadPage(Page);
+  } else {
+    PagesBackwards.push(CurrentPage);
+    CurrentPage = Page;
+    LoadPage(Page);
+    PagesForwards = [];
+    CheckToDisable();
+  }
 }
 
 $(".browser_bar_nav_left").click(function() {
