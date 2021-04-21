@@ -84,10 +84,12 @@ CheckToDisable();
 
 function LoadPage(Page){
   $(".fsdf").text(Page);
+  $("div.browser_bar_search_text").html("nsg://never.say/" + Page);
 }
 
 function FollowLink(Page){
   PagesBackwards.push(CurrentPage);
+  console.log(CurrentPage)
   CurrentPage = Page;
   LoadPage(Page);
   PagesForwards = [];
