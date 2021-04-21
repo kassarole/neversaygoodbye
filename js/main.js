@@ -100,7 +100,6 @@ function LoadPage(Page){
 function FollowLink(Page){
   if (Page == CurrentPage){
     LoadPage(Page);
-    alert('uu');
   } else {
     PagesBackwards.push(CurrentPage);
     CurrentPage = Page;
