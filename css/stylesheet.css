@@ -557,6 +557,10 @@ body {
   color: white;
 }
 
+.footer_bar_notifications_eyecatcher_hidden{
+  display: none;
+}
+
 .footer_bar_notifications_eyecatcher > p{
   position: absolute;
   color: white;
