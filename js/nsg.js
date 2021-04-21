@@ -30,4 +30,3 @@ class Character {
 	constructor(Name) { this.Name = Name; }
 
 }
-
