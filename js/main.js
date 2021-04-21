@@ -56,6 +56,16 @@ function AddMessage(MessageBoxID, MessageSender, MessageContent, MessageTime, Me
 AddMessage("mat_pop", "Mat","That's great to hear an lorefjsdg fjsfjdjlsdk fnjk nfjksn dnjk fnjsdn jnfsd nfnsdmnfm,sdn fm, sdfsdjf sdjf dfjd fjfjfd fjsd fj fsdjkf sdfsdkf sdfjksd fjksd fsdjl sdjkf sdjkf dfjk sdjkfs fjsd fjksd fsdjk fsdjkf sdjkfsd jf sdfsdjk","9:22 pm")
 AddMessage("mat_pop", "Mat","sorry my cat ran across my keyboard","9:23 pm")
 
+// notifications
+notificationCount = 0
+function AddNotification(NoteID, NoteSender, NoteContent, NoteImage){
+	$("#" + NoteID + "> .footer_popups_trifecta_popup_items").append("<div class='footer_popups_trifecta_popup_row_items_item'><img class='footer_popups_trifecta_popup_row_items_item_image' src='"+ NoteImage + "'><div class='footer_popups_trifecta_popup_row_items_item_title'>" + NoteSender + "</div><div class='footer_popups_trifecta_popup_row_items_item_sub'>" + NoteContent + "</div></div>");
+  notificationCount = notificationCount + 1;
+  $("div.footer_bar_notifications_eyecatcher").html("<p>"+notificationCount+"</p>")
+}
+
+AddNotification("noti_pop","Mat","Testing", "https://i.imgur.com/tL8Zgt5.png")
+AddNotification("noti_pop","Matt Gursky", "tagged you in a photo", "https://i.imgur.com/tL8Zgt5.png")
 // Page Navigation
 
 PagesForwards = []
@@ -89,7 +99,6 @@ function LoadPage(Page){
 
 function FollowLink(Page){
   PagesBackwards.push(CurrentPage);
-  console.log(CurrentPage)
   CurrentPage = Page;
   LoadPage(Page);
   PagesForwards = [];
