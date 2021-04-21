@@ -59,11 +59,24 @@ AddMessage("mat_pop", "Mat","sorry my cat ran across my keyboard","9:23 pm")
 // notifications
 notificationCount = 0
 function AddNotification(NoteID, NoteSender, NoteContent, NoteImage){
-	$("#" + NoteID + "> .footer_popups_trifecta_popup_items").append("<div class='footer_popups_trifecta_popup_row_items_item'><img class='footer_popups_trifecta_popup_row_items_item_image' src='"+ NoteImage + "'><div class='footer_popups_trifecta_popup_row_items_item_title'>" + NoteSender + "</div><div class='footer_popups_trifecta_popup_row_items_item_sub'>" + NoteContent + "</div></div>");
   notificationCount = notificationCount + 1;
+  $("#" + NoteID + "> .footer_popups_trifecta_popup_items").append("<div class='footer_popups_trifecta_popup_row_items_item' id='"+notificationCount+"'><img class='footer_popups_trifecta_popup_row_items_item_image' src='"+ NoteImage + "'><div class='footer_popups_trifecta_popup_row_items_item_title'>" + NoteSender + "</div><div class='footer_popups_trifecta_popup_row_items_item_sub'>" + NoteContent + "</div></div>");
+
   $("div.footer_bar_notifications_eyecatcher").html("<p>"+notificationCount+"</p>")
 }
 
+function RemoveNotification(NoteID){
+  var note = document.getElementById(NoteID);
+  note.remove();
+  notificationCount = notificationCount - 1;
+  console.log(notificationCount)
+  if (notificationCount === 0){
+    $(".footer_bar_notifications_eyecatcher").addClass("footer_bar_notifications_eyecatcher_hidden");
+    $(".footer_bar_notifications_eyecatcher").removeClass("footer_bar_notifications_eyecatcher");
+  }else{
+  $("div.footer_bar_notifications_eyecatcher").html("<p>"+notificationCount+"</p>")
+}
+}
 AddNotification("noti_pop","Mat","Testing", "https://i.imgur.com/tL8Zgt5.png")
 AddNotification("noti_pop","Matt Gursky", "tagged you in a photo", "https://i.imgur.com/tL8Zgt5.png")
 // Page Navigation
