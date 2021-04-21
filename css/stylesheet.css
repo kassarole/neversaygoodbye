@@ -1,6 +1,4 @@
-/* 
-border: 3.5px solid #2A19EC;
-*/
+
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 body {
@@ -65,6 +63,16 @@ body {
 
 .browser_bar_nav_right:active{
   background-image: url("https://i.imgur.com/l5bTkLb.png");
+}
+
+.browser_bar_nav_right_disabled{
+  background-image: url("https://i.imgur.com/jcIfkHM.png") !important;
+  pointer-events: none !important;
+}
+
+.browser_bar_nav_left_disabled{
+  background-image: url("https://i.imgur.com/2eV6zw5.png") !important;
+  pointer-events: none !important;
 }
 
 .browser_bar_home{
