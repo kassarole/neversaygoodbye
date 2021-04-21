@@ -29,7 +29,7 @@ $(".toggleLogic").click(function(e) {
     if (this.id != "friends_bar"){$("#friends_pop").hide(); $("#friends_bar").addClass("footer_bar_closed");}
     if (this.id != "status_bar"){$("#status_pop").hide(); $("#status_bar").addClass("footer_bar_closed");}
 	}
-  
+
   var ChatPopupID = this.id
 	$("#" + ChatPopupID.replace("bar", "pop")).toggle();
   if ($("#" + ChatPopupID.replace("bar", "pop")).is(':visible')){
@@ -39,7 +39,7 @@ $(".toggleLogic").click(function(e) {
   	$("#" + ChatPopupID).removeClass("footer_bar_open")
   	$("#" + ChatPopupID).addClass("footer_bar_closed")
   }
-  
+
 });
 
 // Registering a closed state to the popups.
@@ -56,6 +56,16 @@ function AddMessage(MessageBoxID, MessageSender, MessageContent, MessageTime, Me
 AddMessage("mat_pop", "Mat","That's great to hear an lorefjsdg fjsfjdjlsdk fnjk nfjksn dnjk fnjsdn jnfsd nfnsdmnfm,sdn fm, sdfsdjf sdjf dfjd fjfjfd fjsd fj fsdjkf sdfsdkf sdfjksd fjksd fsdjl sdjkf sdjkf dfjk sdjkfs fjsd fjksd fsdjk fsdjkf sdjkfsd jf sdfsdjk","9:22 pm")
 AddMessage("mat_pop", "Mat","sorry my cat ran across my keyboard","9:23 pm")
 
+// notifications
+notificationCount = 0
+function AddNotification(NoteID, NoteSender, NoteContent, NoteImage){
+	$("#" + NoteID + "> .footer_popups_trifecta_popup_items").append("<div class='footer_popups_trifecta_popup_row_items_item'><img class='footer_popups_trifecta_popup_row_items_item_image' src='"+ NoteImage + "'><div class='footer_popups_trifecta_popup_row_items_item_title'>" + NoteSender + "</div><div class='footer_popups_trifecta_popup_row_items_item_sub'>" + NoteContent + "</div></div>");
+  notificationCount = notificationCount + 1;
+  $("div.footer_bar_notifications_eyecatcher").html("<p>"+notificationCount+"</p>")
+}
+
+AddNotification("noti_pop","Mat","Testing", "https://i.imgur.com/tL8Zgt5.png")
+AddNotification("noti_pop","Matt Gursky", "tagged you in a photo", "https://i.imgur.com/tL8Zgt5.png")
 // Page Navigation
 
 PagesForwards = []
@@ -65,25 +75,26 @@ CurrentPage = "Landing"
 $(".fsdf").text("Landing");
 
 function CheckToDisable(){
-  
-  if (jQuery.isEmptyObject(PagesForwards)){ 
-    $(".browser_bar_nav_right").addClass("browser_bar_nav_right_disabled"); 
-  } else { 
-    $(".browser_bar_nav_right").removeClass("browser_bar_nav_right_disabled"); 
+
+  if (jQuery.isEmptyObject(PagesForwards)){
+    $(".browser_bar_nav_right").addClass("browser_bar_nav_right_disabled");
+  } else {
+    $(".browser_bar_nav_right").removeClass("browser_bar_nav_right_disabled");
   }
 
   if (jQuery.isEmptyObject(PagesBackwards)){
-    $(".browser_bar_nav_left").addClass("browser_bar_nav_left_disabled"); 
-  } else { 
-    $(".browser_bar_nav_left").removeClass("browser_bar_nav_left_disabled"); 
+    $(".browser_bar_nav_left").addClass("browser_bar_nav_left_disabled");
+  } else {
+    $(".browser_bar_nav_left").removeClass("browser_bar_nav_left_disabled");
   }
 
-} 
+}
 
 CheckToDisable();
 
 function LoadPage(Page){
   $(".fsdf").text(Page);
+  $("div.browser_bar_search_text").html("nsg://never.say/" + Page);
 }
 
 function FollowLink(Page){
@@ -115,4 +126,3 @@ $(".browser_bar_nav_right").click(function() {
     CheckToDisable();
   }
 });
-
