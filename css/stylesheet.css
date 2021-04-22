@@ -585,7 +585,7 @@ body {
 
 .footer_bar_notifications_eyecatcher{
   position: absolute;
-  background-image: var(--footer-notifications-eyecatcher)
+  background-image: var(--footer-notifications-eyecatcher);
   background-repeat: no-repeat;
   background-size: 20px 20px;
   width: 20px;
@@ -607,4 +607,8 @@ body {
   font-size: 12px;
   font-weight: 600;
   text-align: center;
+}
+
+body.waiting * {
+    cursor: progress;
 }
