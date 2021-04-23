@@ -3,7 +3,7 @@
 
 :root {
   --navigation-background: url("https://i.imgur.com/bVwAVi6.png");
-  
+
   --navigation-left: url("https://i.imgur.com/g0nG7on.png");
   --navigation-left-hover: url("https://i.imgur.com/eQGOGMS.png");
   --navigation-left-clicked: url("https://i.imgur.com/vr87pK7.png");
@@ -12,12 +12,12 @@
   --navigation-right: url("https://i.imgur.com/bHklheN.png");
   --navigation-right-hover: url("https://i.imgur.com/6EBkMHj.png");
   --navigation-right-clicked: url("https://i.imgur.com/l5bTkLb.png");
-  --navigation-right-disabled: url("https://i.imgur.com/jcIfkHM.png")
+  --navigation-right-disabled: url("https://i.imgur.com/jcIfkHM.png");
 
   --navigation-home: url("https://i.imgur.com/9XheP9J.png");
   --navigation-home-hover: url("https://i.imgur.com/a09zB1R.png");
   --navigation-home-clicked: url("https://i.imgur.com/YKjr5WW.png");
-  
+
   --navigation-refresh: url("https://i.imgur.com/vgv2Mmy.png");
   --navigation-refresh-hover: url("https://i.imgur.com/rlaDwtX.png");
   --navigation-refresh-clicked: url("https://i.imgur.com/VaH8ooH.png");
@@ -585,7 +585,7 @@ body {
 
 .footer_bar_notifications_eyecatcher{
   position: absolute;
-  background-image: var(--footer-notifications-eyecatcher)
+  background-image: var(--footer-notifications-eyecatcher);
   background-repeat: no-repeat;
   background-size: 20px 20px;
   width: 20px;
@@ -607,4 +607,8 @@ body {
   font-size: 12px;
   font-weight: 600;
   text-align: center;
+}
+
+body.waiting * {
+    cursor: progress;
 }
