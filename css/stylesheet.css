@@ -37,6 +37,8 @@
   --footer-popup-close: url("https://i.imgur.com/2IlJkn1.png");
   --footer-reply: url("https://i.imgur.com/2e8wIc9.png");
 
+  --page-facenook: url("https://i.imgur.com/fu6cXCa.png");
+
 }
 
 body {
@@ -51,6 +53,7 @@ body {
   background: #F1F1EC;
   border-bottom: 2px solid #D8D2BD;
   image-rendering: pixelated;
+  z-index: 100;
 }
 
 .browser_bar_nav_bg{
@@ -234,7 +237,7 @@ body {
 
 .footer_bar_status_icon{
   position: absolute;
-  background-image: var(--footer-notifications);
+  background-image: var(--footer-status);
   background-repeat: no-repeat;
   background-size: 16px 16px;
   width: 16px;
@@ -396,7 +399,7 @@ body {
 
 .footer_popups_chat_reply_icon{
   position: absolute;
-  background-image: var(--footer-repy);
+  background-image: var(--footer-reply);
   background-repeat: no-repeat;
   background-size: 23px 23px;
   width: 23px;
@@ -611,4 +614,209 @@ body {
 
 body.waiting * {
     cursor: progress;
+}
+
+.page{
+  margin: 0 auto;
+  width: auto;
+  max-width: min(80%, 1450px);  
+  image-rendering: pixelated;
+}
+
+.page_facenooknav{
+  position: relative;
+  width: auto;
+  background-color: #3B5A97;
+  height: 40px;
+  border-left: 4px solid #263C74;
+  border-right: 4px solid #263C74;
+  border-bottom: 4px solid #263C74;
+}
+
+.page_facenooknav_leftjank{
+  position: absolute;
+  left: -4px;
+  top: 40px;
+  width: 4px;
+  height: 4px;
+  background-color: #F2F1F5;
+}
+
+.page_facenooknav_rightjank{
+  position: absolute;
+  right: -4px;
+  top: 40px;
+  width: 4px;
+  height: 4px;
+  background-color: #F2F1F5;
+}
+
+.page_facenooknav_logo{
+  position: absolute;
+  background-image: var(--page-facenook);
+  background-repeat: no-repeat;
+  background-size: 102px 33px;
+  width: 102px;
+  height: 33px;
+  top: 3px;
+}
+
+.page_facenooknav_link{
+  float: right;
+  font-size: 24px;
+  color: #B6C6EE;
+  padding: 8px;
+  padding-right: 15px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.page_facenooknav_link:hover{
+  color: white;
+}
+
+.page_background{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 125px;
+  background-color: #F2F1F5;
+  border-bottom: 4px solid #E1E3E5;
+  z-index: -100;
+}
+
+.page_profile_sidebar_image{
+  width: 261.6px;
+  height: 218.4px;
+  margin-top: 25px;
+}
+
+.page_profile_wrapper{
+  position: relative;
+}
+
+.page_profile_headline{
+  position: absolute;
+  font-size: 24px;
+  top: 21px;
+  left: 278px;
+}
+
+.page_profile_headline_name{
+  font-size: 26px;
+  margin-right: 2px;
+  display: inline-block;
+}
+
+.page_profile_headline_status{
+  font-size: 19px;
+  display: inline-block;
+  color: #77767A;
+  padding-left: 3px;
+}
+
+.page_profile_headline_date{
+  font-size: 15px;
+  padding-right: 5px;
+  color: #AAAAAE;
+  display: inline-block;  
+  padding-left: 2px;
+}
+
+.page_profile_sidebar{
+  width: 261.6px;
+  height: 1000px;
+}
+
+.page_profile_sidebar_info_wrapper{
+  border-right: 3px solid #D7DAE1;
+  margin-top: 50px;
+
+}
+
+.page_profile_sidebar_link{
+  padding-top: 4px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom: 3px solid #D7DAE1;
+  color: #516590;
+  user-select: none;
+  cursor: pointer;
+}
+
+.page_profile_sidebar_info_header{
+  padding-top: 4px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  font-size: 16px;
+  border-top: 3px solid #9FADC5;
+  color: black;
+  background-color: #F0F3F8;
+  margin-top: 22px;
+}
+
+.page_profile_sidebar_info_catagory{
+  padding-top: 14px;
+  padding-left: 15px;
+  font-size: 17px;
+  color: #7E7E7E;  
+}
+
+.page_profile_sidebar_info_value{
+  padding-top: -1px;
+  padding-left: 15px;
+  font-size: 17px;
+  color: black;
+  padding-bottom: 1px;
+  padding-right: 60px;
+}
+
+.page_profile_sidebar_friend{
+  display: inline-block;
+  margin: 28px;
+  margin-top: 15px;
+  width: 70px;
+  height: 70px;
+}
+
+.page_profile_sidebar_friend > p{
+  margin-top: 70px;
+  text-align: center;
+  font-size: 16px;
+  width: 120px;
+  margin-left: -30px;
+  color: #516590;
+}
+
+
+.page_profile_sidebar_friend > img{
+  margin-bottom: -85px;
+  width: 60px;
+}
+
+.page_profile_feed {
+   background: blue;
+   width: calc(100%-280px);
+   margin-top: -900px;
+   margin-left: 280px;
+}
+
+.page_profile_feed_divider{
+  width: 100%;
+}
+
+.page_profile_feed_divider_time{
+  position: absolute;
+  margin-top: -7.5px;
+  font-size: 14px;
+  margin-left: -5px;
+  color: #A8A8A8;
+}
+
+.page_profile_feed_divider_line{
+  background-color: #D2D2D2;
+  height: 4px;
+  width: calc(100%-60px);
+  border-left: 60px solid white;
 }

@@ -85,7 +85,6 @@ PagesForwards = []
 PagesBackwards = []
 
 CurrentPage = "Landing"
-$(".fsdf").text("Landing");
 
 function CheckToDisable(){
 
@@ -108,7 +107,6 @@ CheckToDisable();
 function LoadPage(Page){
   delay = Math.floor(Math.random() * 1001);
   $('body').addClass('waiting');
-  setTimeout(function(){$(".fsdf").text(Page);}, delay);
   setTimeout(function(){$('body').removeClass('waiting');}, delay);
   $("div.browser_bar_search_text").html("nsg://never.say/" + Page);
 }
