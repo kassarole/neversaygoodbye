@@ -795,18 +795,22 @@ body.waiting * {
   width: 60px;
 }
 
-.page_profile_feed {
-   background: blue;
+.page_profile_wall {
    width: calc(100%-280px);
    margin-top: -900px;
    margin-left: 280px;
 }
 
-.page_profile_feed_divider{
+.page_profile_wall_divider{
   width: 100%;
 }
 
-.page_profile_feed_divider_time{
+.page_profile_wall_datedivider{
+  padding-bottom: -5px;   
+  width: 100%;
+}
+
+.page_profile_wall_divider_time{
   position: absolute;
   margin-top: -7.5px;
   font-size: 14px;
@@ -814,9 +818,55 @@ body.waiting * {
   color: #A8A8A8;
 }
 
-.page_profile_feed_divider_line{
+.page_profile_wall_divider_line{
   background-color: #D2D2D2;
   height: 4px;
   width: calc(100%-60px);
   border-left: 60px solid white;
+  margin-top: -5px;
+}
+
+.page_profile_wall_node{
+  margin-top: 40px;
+}
+
+.page_profile_wall_node_icon{
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  margin-top: -4px;
+  margin-left: 20px;
+}
+
+.page_profile_wall_node_value{
+  margin-top: -30px;
+  font-size: 16px;
+  margin-left: 62px;
+  margin-bottom: 15px;
+}
+
+.page_profile_wall_node_time{
+  margin-left: 5px;
+  font-size: 14px;
+  display: inline-block;
+  color: #7E7E7E;  
+}
+
+.page_profile_wall_clear_divider{
+  height: 24px;
+}
+
+.node_status_value{
+  font-size: 19px;
+}
+
+.page_profile_wall_node_images{
+  display: inline-block;
+  margin-left: 64px;
+  margin-bottom: 15px;
+}
+
+.page_profile_wall_node_image{
+  margin-top: -8px;
+  margin-right: 10px;
 }

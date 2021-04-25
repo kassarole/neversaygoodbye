@@ -30,14 +30,17 @@ $(".toggleLogic").click(function(e) {
     if (this.id != "status_bar"){$("#status_pop").hide(); $("#status_bar").addClass("footer_bar_closed");}
 	}
 
+
   var ChatPopupID = this.id
 	$("#" + ChatPopupID.replace("bar", "pop")).toggle();
   if ($("#" + ChatPopupID.replace("bar", "pop")).is(':visible')){
   	$("#" + ChatPopupID).addClass("footer_bar_open")
   	$("#" + ChatPopupID).removeClass("footer_bar_closed")
+    if (this.id == "noti_bar"){$(".footer_bar_notifications_eyecatcher").hide();}
   } else {
   	$("#" + ChatPopupID).removeClass("footer_bar_open")
   	$("#" + ChatPopupID).addClass("footer_bar_closed")
+    if (this.id == "noti_bar"){$(".footer_bar_notifications_eyecatcher").show();}
   }
 
 });
@@ -73,9 +76,9 @@ function RemoveNotification(NoteID){
   if (notificationCount === 0){
     $(".footer_bar_notifications_eyecatcher").addClass("footer_bar_notifications_eyecatcher_hidden");
     $(".footer_bar_notifications_eyecatcher").removeClass("footer_bar_notifications_eyecatcher");
-  }else{
-  $("div.footer_bar_notifications_eyecatcher").html("<p>"+notificationCount+"</p>")
-}
+  } else {
+    $("div.footer_bar_notifications_eyecatcher").html("<p>"+notificationCount+"</p>")
+  }
 }
 AddNotification("noti_pop","Mat","Testing", "https://i.imgur.com/tL8Zgt5.png")
 AddNotification("noti_pop","Matt Gursky", "tagged you in a photo", "https://i.imgur.com/tL8Zgt5.png")
