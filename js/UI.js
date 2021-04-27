@@ -1,12 +1,3 @@
-// Javascript was a mistake. Ecmascript is satan incarnate.
-
-function RemElem(array, elem) {
-    if (elem > -1) {
-        array.splice(elem, 1);
-    }
-    return array
-}
-
 
 // URL Resize Bar
 
@@ -30,7 +21,6 @@ $(".toggleLogic").click(function(e) {
     if (this.id != "status_bar"){$("#status_pop").hide(); $("#status_bar").addClass("footer_bar_closed");}
 	}
 
-
   var ChatPopupID = this.id
 	$("#" + ChatPopupID.replace("bar", "pop")).toggle();
   if ($("#" + ChatPopupID.replace("bar", "pop")).is(':visible')){
@@ -44,6 +34,7 @@ $(".toggleLogic").click(function(e) {
   }
 
 });
+
 
 // Registering a closed state to the popups.
 
@@ -87,7 +78,7 @@ AddNotification("noti_pop","Matt Gursky", "tagged you in a photo", "https://i.im
 PagesForwards = []
 PagesBackwards = []
 
-CurrentPage = "Landing"
+CurrentPage = []
 
 function CheckToDisable(){
 
@@ -107,11 +98,17 @@ function CheckToDisable(){
 
 CheckToDisable();
 
+function InitialLoadPage(Page){
+  CurrentPage = Page
+  LoadPage(Page)
+}
+
 function LoadPage(Page){
   delay = Math.floor(Math.random() * 1001);
   $('body').addClass('waiting');
   setTimeout(function(){$('body').removeClass('waiting');}, delay);
-  $("div.browser_bar_search_text").html("nsg://never.say/" + Page);
+  $("div.browser_bar_search_text").html("nsg://never.say/" + Page[1]);
+  $(".page_content").html(Page[0]);
 }
 
 function FollowLink(Page){
