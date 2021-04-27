@@ -99,8 +99,11 @@ function CheckToDisable(){
 CheckToDisable();
 
 function InitialLoadPage(Page){
-  CurrentPage = Page
-  LoadPage(Page)
+  CurrentPage = Page;
+  PagesForwards = [];
+  PagesBackwards = [];
+  LoadPage(Page);
+  CheckToDisable();
 }
 
 function LoadPage(Page){
