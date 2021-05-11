@@ -22,12 +22,12 @@
 			</div>
 		</div>
 
-<!--
-		<button onclick="FollowLink('Page2')">navigate to page2</button>
-		<button onclick="FollowLink('Page3')">navigate to page3</button>
-		<button onclick="FollowLink('Page4')">navigate to page4</button>
+
+		<button onclick="FollowLink(ProfilePage(KellyChar))">load kelly page</button>
+		<button onclick="FollowLink(ProfilePage(MatChar))">load mat page</button>
+		<button onclick="FollowLink(ProfilePage(JimChar))">load jim page</button>
 		<button onclick="RemoveNotification(1)">Remove the first notification</button>
--->
+
 
 		<div class="page">
 			<div class="page_background"></div>
@@ -40,106 +40,10 @@
 				<div class="page_facenooknav_link">Profile</div>
 			</div>
 
-			<div class="page_profile_wrapper">			
-				
-				<div class="page_profile_headline">
-					<div class="page_profile_headline_name">Evelyn Merem</div>
-					<div class="page_profile_headline_status">is goodbye summer, hello suckk</div>
-					<div class="page_profile_headline_date">Today.</div>
-				</div>	
-
-				<div class="page_profile_sidebar">
-					
-					<img class="page_profile_sidebar_image" src="https://i.imgur.com/piQTA2p.png">
-					<div class="page_profile_sidebar_links">
-						<div class="page_profile_sidebar_link">View Photos of Mat (3)</div>
-						<div class="page_profile_sidebar_link">View Information</div>
-						<div class="page_profile_sidebar_link">Poke Mat</div>
-					</div>
-
-					<div class="page_profile_sidebar_info_wrapper">
-						<div class="page_profile_sidebar_info_header">Basic Information</div>
-						<div class="page_profile_sidebar_info_catagory">Networks</div>
-						<div class="page_profile_sidebar_info_value">Natick High School</div>
-						<div class="page_profile_sidebar_info_catagory">Relationship Status</div>
-						<div class="page_profile_sidebar_info_value">Single</div>
-						<div class="page_profile_sidebar_info_catagory">Birthday</div>
-						<div class="page_profile_sidebar_info_value">June 5</div>
-						<div class="page_profile_sidebar_info_catagory">Hometown</div>
-						<div class="page_profile_sidebar_info_value">Natick, MA</div>
-						<div class="page_profile_sidebar_info_header">Friends</div>
-						<div class="page_profile_sidebar_friends_wrapper">
-							<div class="page_profile_sidebar_friend"><img src="https://i.imgur.com/jY7EsH4.png"><p>Jane Doe</p></div>
-							<div class="page_profile_sidebar_friend"><img src="https://i.imgur.com/3tl1OSl.png"><p>Emily Singer</p></div>
-							<div class="page_profile_sidebar_friend"><img src="https://i.imgur.com/giHd1fv.png"><p>Evelyn Merem</p></div>
-							<div class="page_profile_sidebar_friend"><img src="https://i.imgur.com/GFUURwc.png"><p>Kelly Struman</p></div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="page_profile_wall">
-
-					<div class="page_profile_wall_clear_divider"></div>
-
-					<div class="page_profile_wall_divider" style="padding-bottom: 5px">
-						<div class="page_profile_wall_divider_time">Today</div>
-						<div class="page_profile_wall_divider_line"></div>
-					</div>
-
-					<div class="page_profile_wall_node">
-						<img class="page_profile_wall_node_icon" src="https://i.imgur.com/xDJxffC.png">
-						<div class="page_profile_wall_node_value">Mat wrote on Kyle Seeley's wall.<div class="page_profile_wall_node_time">6:14pm</div></div>
-					</div>
-
-					<div class="page_profile_wall_divider">
-						<div class="page_profile_wall_divider_line"></div>
-					</div>
-
-					<div class="page_profile_wall_node">
-						<img class="page_profile_wall_node_icon" src="https://i.imgur.com/xDJxffC.png">
-						<div class="page_profile_wall_node_value node_status_value">Mat wrote on Kyle Seeley's wall.<div class="page_profile_wall_node_time">6:14pm</div></div>
-					</div>
-
-					<div class="page_profile_wall_divider">
-						<div class="page_profile_wall_divider_line"></div>
-					</div>
-
-					<div class="page_profile_wall_node">
-						<img class="page_profile_wall_node_icon" src="https://i.imgur.com/xDJxffC.png">
-						<div class="page_profile_wall_node_value">Mat wrote on Kyle Seeley's wall.<div class="page_profile_wall_node_time">6:14pm</div></div>
-					</div>
-
-
-					<div class="page_profile_wall_divider">
-						<div class="page_profile_wall_divider_line"></div>
-					</div>
-
-					<div class="page_profile_wall_node">
-						<img class="page_profile_wall_node_icon" src="https://i.imgur.com/xDJxffC.png">
-						<div class="page_profile_wall_node_value">Mat wrote on Kyle Seeley's wall.<div class="page_profile_wall_node_time">6:14pm</div></div>
-					</div>
-
-
-					<div class="page_profile_wall_divider">
-						<div class="page_profile_wall_divider_line"></div>
-					</div>
-
-					<div class="page_profile_wall_node">
-						<img class="page_profile_wall_node_icon" src="https://i.imgur.com/xDJxffC.png">
-						<div class="page_profile_wall_node_value">Mat wrote on Kyle Seeley's wall.<div class="page_profile_wall_node_time">6:14pm</div></div>
-						<div class="page_profile_wall_node_images">
-							<img class="page_profile_wall_node_image" src="https://picsum.photos/100">
-							<img class="page_profile_wall_node_image" src="https://picsum.photos/100">
-						</div>
-					</div>
-
-					<div class="page_profile_wall_divider">
-						<div class="page_profile_wall_divider_line"></div>
-					</div>
-
-
-				</div>
+			<div class="page_content">
+				<!-- Site content loads via JS -->
 			</div>
+
 		</div>
 
 
@@ -251,6 +155,10 @@
 
 	</body>
 
-	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/pages.js"></script>
+	<script type="text/javascript" src="../js/backend/orchestra.js"></script>
+	<script type="text/javascript" src="../js/characters.js"></script>
+	<script type="text/javascript" src="../js/backend/engine.js"></script>
+	<script type="text/javascript" src="../js/conductor.js" defer></script>
 
 </html>

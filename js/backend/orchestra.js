@@ -1,11 +1,13 @@
-
-
 const RelationshipTypes = {
   Single: "Single",
-  Taken: "Taken",
+  Taken: "In a relationship with ",
   Married: "Married",
   ItsComplicated: "It's complicated"
 };
+
+const MonthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 
 
 class Character {
@@ -26,7 +28,9 @@ class Character {
 	Movies;
 	Music;
 	Shows;
+	Statuses;
 
 	constructor(Name) { this.Name = Name; }
 
 }
+

@@ -13,8 +13,9 @@ MatChar.Books = ["The Shining", "The Lay of the Land", "The Hunger Games"];
 MatChar.Movies = ["Wall Street", "Groundhog Day", "The Matrix"]
 MatChar.Music = ["3OH!3 - Don't Trust Me", "Lady Gaga - Poker Face", "Metro Station - Shake It"]
 MatChar.Shows = ["Sex and the city", "Ally McBeal"]
+MatChar.Statuses = ["Lesggoo!", "whatever mat says"]
 
-MatChar.ProfilePhoto = "../static/images/profile/mat.png";
+MatChar.ProfilePhoto = "https://i.imgur.com/piQTA2p.png";
 MatChar.Photos = [
 	"../static/images/photos/image1.png",
 	"../static/images/photos/image2.png",
@@ -36,8 +37,8 @@ KellyChar.Books = ["Dr Jekyll and Mr Hyde", "The Witcher", "War and Peace"];
 KellyChar.Movies = ["The Girl Next Door", "Walking Tall"]
 KellyChar.Music = ["Waters of March - Jane Monheit", "All my Friends - LCD Soundsystem", "Sound of Silver - LCD Soundystem"]
 KellyChar.Shows = ["Scrubs", "The Office"]
-
-KellyChar.ProfilePhoto = "../static/images/profile/kelly.png";
+KellyChar.Statuses = ["Yeah!", "Photography or something..."]
+KellyChar.ProfilePhoto = "https://i.imgur.com/5Kd288M.png";
 KellyChar.Photos = [
 	"../static/images/photos/image4.png",
 	"../static/images/photos/image5.png",
@@ -47,7 +48,7 @@ KellyChar.Photos = [
 
 // =========== James Character ==============
 
-let JimChar = new Character("James Zachary");
+let JimChar = new Character("Jamie Zachary");
 
 JimChar.Nickname = "Jim";
 JimChar.Networks = "Freshman Class of 2011";
@@ -60,8 +61,9 @@ JimChar.Books = ["Artemis Fowl", "Percy Jackson", "Diary of a Wimpy Kid"];
 JimChar.Movies = ["White Men Can't Jump", "Jaws", "Transformers"]
 JimChar.Music = ["Swedish House Mafia - Don't You Worry Child", "No More Kings - Obey the Groove", "PaceWon&Mr.Green - Number Won"]
 JimChar.Shows = ["Survivor", "The Office"]
+JimChar.Statuses = ["Yeah!", "yes, jamie is a girls name"]
 
-JimChar.ProfilePhoto = "../static/images/profile/Jim.png";
+JimChar.ProfilePhoto = "https://i.imgur.com/geVV9wU.png";
 JimChar.Photos = [
 	"../static/images/photos/image7.png",
 	"../static/images/photos/image8.png",
